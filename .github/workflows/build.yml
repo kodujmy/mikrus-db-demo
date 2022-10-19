@@ -15,20 +15,20 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Hello world action
-        with: # Set the secret as an input
-          JDBC_DATABASE_URL: ${{ secrets.JDBC_DATABASE_URL }}
-        env: # Or as an environment variable
-          JDBC_DATABASE_URL: ${{ secrets.JDBC_DATABASE_URL }}
-      - uses: actions/checkout@v3
-      - name: Set up JDK 17
-        uses: actions/setup-java@v3
-        with:
-          java-version: '17'
-          distribution: 'temurin'
-          cache: maven
-      - name: Print in next step
-        run: echo "$JDBC_DATABASE_URL"
+    - name: Hello world action
+      with: # Set the secret as an input
+        JDBC_DATABASE_URL: ${{ secrets.JDBC_DATABASE_URL }}
+      env: # Or as an environment variable
+        JDBC_DATABASE_URL: ${{ secrets.JDBC_DATABASE_URL }}
+    - uses: actions/checkout@v3
+    - name: Set up JDK 17
+      uses: actions/setup-java@v3
+      with:
+        java-version: '17'
+        distribution: 'temurin'
+        cache: maven
+    - name: Print in next step
+      run: echo "$JDBC_DATABASE_URL"
 
 #      - name: Build with Maven
 #        run: mvn -B package --file pom.xml
