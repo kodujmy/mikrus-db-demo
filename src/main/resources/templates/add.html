@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layouts/layout}">
+<head>
+    <title>Demo page</title>
+</head>
+<body>
+<div layout:fragment="content" class="container">
+    <div class="container">
+        <div class="page-header">
+            <h1>Add New</h1>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12 col-lg-6">
+                <form th:object="${person}" enctype="multipart/form-data" method="POST">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input id="name" type="text" class="form-control" placeholder="Lorem ipsum" th:field="*{name}" />
+                        <div th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Name Error</div>
+
+                        <label for="age">Age</label>
+                        <input type="number" step="1" id="age" class="form-control" th:field="*{age}" />
+                        <div th:if="${#fields.hasErrors('age')}" th:errors="*{age}">Age Error</div>
+
+
+                        <label for="image">Age</label>
+                        <input type="file" id="image" name="image" class="form-control"/>
+
+                    </div>
+                    <button type="submit" class="btn btn-default">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
