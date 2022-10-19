@@ -27,8 +27,11 @@ jobs:
         java-version: '17'
         distribution: 'temurin'
         cache: maven
-    - name: Print in next step
-      run: echo "$JDBC_DATABASE_URL"
+    - shell: bash
+      env:
+        JDBC_DATABASE_URL: ${{ secrets.JDBC_DATABASE_URL }}
+      run: |
+        echo "$JDBC_DATABASE_URL"
 
 #      - name: Build with Maven
 #        run: mvn -B package --file pom.xml
