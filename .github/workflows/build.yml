@@ -63,4 +63,5 @@ jobs:
         username: ${{ secrets.USERNAME }}
         key: ${{ secrets.KEY }}
         port: ${{ secrets.PORT }}
-        script: JDBC_DATABASE_URL="$JDBC_DATABASE_URL" docker-compose down && docker-compose pull && docker-compose up -d
+        script: echo $JDBC_DATABASE_URL
+#         script: JDBC_DATABASE_URL="$JDBC_DATABASE_URL" docker-compose down && docker-compose pull && docker-compose up -d
