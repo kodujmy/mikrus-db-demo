@@ -16,8 +16,16 @@ Application is available here
 
 # Deploying app to Mikrus
 
+Deployment uses GitHub Actions defined in [build.yml](.github/workflows/build.yml) file.
+
+Following secrets are required in repository settings section (example: [https://github.com/kodujmy/mikrus-db-demo/settings/secrets/actions](https://github.com/kodujmy/mikrus-db-demo/settings/secrets/actions)):
+
+![GitHub Secrets](.images/required_secrets.png)
+
 
 # Local Development
+
+Fill right secrets in file and paste it to your IDE or provide via env. variables.
 
 ## Configure elephantsql database
 
