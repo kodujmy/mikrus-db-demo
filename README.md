@@ -1,4 +1,4 @@
-# Spring Boot Mikrus Flyway Demo App
+# Spring Boot Mikrus Flyway Demo Application
 
 ![.images/demo.png](.images/demo.png)
 
